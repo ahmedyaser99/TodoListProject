@@ -1,0 +1,18 @@
+﻿@model TodoList
+<form asp-action="SaveEdit" asp-controller="TodoList" asp-route-id="@Model.ID">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <input asp-for="ID" type="hidden" class="form-control" />
+    <div>
+        <label asp-for="Item"></label>
+        <input asp-for="Item" class="form-control" />
+        <span class="text-danger " asp-validation-for="Item"></span>
+    </div>
+    <br />
+    <input type="submit" class="btn btn-success" value="Save" />
+</form>
+@section Scripts{
+    @*<script src="~/lib/jquery/dist/jquery.js"></script>*@
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js">
+    </script>
+}

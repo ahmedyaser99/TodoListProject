@@ -1,0 +1,28 @@
+﻿@model TodoList
+
+<form method="post" asp-action="SaveAdd" asp-controller="TodoList">
+
+    <div>
+        <label asp-for="Item"></label>
+        <input asp-for="Item" class="form-control" />
+        <span class="text-danger" asp-validation-for="Item"></span>
+    </div>
+    
+    <br/>
+
+    <input type="submit" value="Save" class="btn btn-success" />
+
+
+
+
+</form>
+<br />
+
+<a asp-action="Index" asp-controller="TodoList" class="btn btn-success">Back To List</a>
+
+@section Scripts{
+    @*<script src="~/lib/jquery/dist/jquery.js"></script>*@
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js">
+    </script>
+}

@@ -1,0 +1,34 @@
+﻿@model List<TodoList>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Todos</th>
+        
+    </tr>
+    @foreach (var item in Model)
+   {
+       <tr>
+           <td>@item.Item</td>
+           
+           <td>
+               <a class="btn btn-success" asp-action="Edit" asp-controller="TodoList" asp-route-id="@item.ID">Edit</a>
+               <a class="btn btn-success"
+               asp-action="Delete"
+               asp-controller="TodoList"
+               asp-route-id="@item.ID"
+               onclick="ConfirmDelete(event)">Delete</a>
+
+                <script>
+                    function ConfirmDelete() {
+                        document.getElementById("")
+                        var accept = confirm("Are You Sure?");
+                        if (accept == false) {
+                            event.preventDefault();//prevent go to server
+                        }
+                    }
+                </script>
+           </td>
+       </tr>
+       
+   }
+</table>
+<a href="\TodoList\Add" class="btn btn-alert-success">Add Todo</a>
